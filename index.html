@@ -1,70 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Favorite Song Webpage</title>
-<style>
-/* CSS Customization */
-body {
-background-color: #1a1a2e;
-color: #ffffff;
-font-family: Arial, sans-serif;
-text-align: center;
-padding: 40px;
-}
-h1 { color: #e94560; }
-.video-container {
-margin: 30px auto;
-max-width: 560px;
-border-radius: 10px;
-overflow: hidden;
-}
-#animated-box {
-width: 100px;
-height: 100px;
-background-color: #0f3460;
-border: 2px solid #e94560;
-border-radius: 8px;
-margin: 40px auto;
-line-height: 100px;
-font-weight: bold;
-}
-</style>
+<title>Bootstrap 4 Project</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://jsdelivr.net">
 </head>
 <body>
 
-<h1>Welcome to My Favorite Track Showcase</h1>
-<p>Check out the embedded YouTube video below and watch the JavaScript animation move!</p>
-
-<!-- HTML: Embedded YouTube Video -->
-<div class="video-container">
-<iframe width="560" height="315"
-src="https://youtube.com"
-title="YouTube video player"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
+<div class="container text-center mt-5">
+<h1 class="display-4">Welcome to My Bootstrap Site</h1>
+<p class="lead">This is my assignment for Bootstrap 4.</p>
+<button type="button" class="btn btn-primary">Click Me!</button>
 </div>
-
-<!-- JS Animation Box -->
-<div id="animated-box">BOUNCE</div>
-
-<script>
-// JavaScript Animation Logic
-const box = document.getElementById('animated-box');
-let position = 0;
-let direction = 1;
-
-function animate() {
-position += 2 * direction;
-if (position > 100 || position < -100) { direction *= -1; }
-box.style.transform = `translateX(${position}px)`;
-requestAnimationFrame(animate);
-}
-animate();
-</script>
 
 </body>
 </html>
