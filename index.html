@@ -1,20 +1,70 @@
-
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Bootstrap 4 Project</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap 4 CSS -->
-<link rel="stylesheet" href="https://jsdelivr.net">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music Website Project</title>
+    <!-- Bootstrap 4 CSS Link -->
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /* Animated square styling */
+        #movingBox {
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 8px;
+            position: relative;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container text-center mt-5">
-<h1 class="display-4">Welcome to My Bootstrap Site</h1>
-<p class="lead">This is my assignment for Bootstrap 4.</p>
-<button type="button" class="btn btn-primary">Click Me!</button>
-</div>
+    <div class="container text-center mt-5">
+        <h1 class="display-4 text-primary">Welcome to My Music Site</h1>
+        <p class="lead">This is my Bootstrap assignment featuring my favorite video.</p>
+        
+        <!-- YouTube Video Placeholder (You can change the video ID later) -->
+        <div class="video-container d-flex justify-content-center">
+            <iframe width="560" height="315" src="https://youtube.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Animated Element Box -->
+        <div id="movingBox"></div>
+        <button class="btn btn-success mt-3" onclick="startAnimation()">Click to Move Box</button>
+    </div>
+
+    <!-- JavaScript Animation Script -->
+    <script>
+        let position = 0;
+        let direction = 1;
+        
+        function startAnimation() {
+            let box = document.getElementById("movingBox");
+            
+            function frame() {
+                if (position >= 100) {
+                    direction = -1; // Bounce back left
+                } else if (position <= -100) {
+                    direction = 1; // Bounce back right
+                }
+                position += 2 * direction;
+                box.style.left = position + 'px';
+                requestAnimationFrame(frame);
+            }
+            frame();
+        }
+    </script>
 
 </body>
 </html>
